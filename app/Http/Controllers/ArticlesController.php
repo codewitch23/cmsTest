@@ -18,4 +18,9 @@ class ArticlesController extends Controller
         $articles=Article::take(3)->latest()->get();
         return view('articles.index',['articles'=>$articles]);
     }
+    public function create()
+    {
+        return view('articles.create');
+    }
+
 }
