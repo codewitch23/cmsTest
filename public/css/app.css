@@ -10929,6 +10929,8 @@ a.text-dark:focus {
 }
 
 .my-style {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #fff3cd;
   background: #243447;
   height: 100vh;
@@ -10936,5 +10938,15 @@ a.text-dark:focus {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.my-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  background: #243447;
+  color: #fff3cd;
 }
 

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    @yield('header')
+
     <div id="wrapper">
         <div id="page" class="container">
             <div id="content">

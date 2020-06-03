@@ -7,13 +7,25 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-$main-color=#fff3cd;
-.my-style{
+$main-color: #243447;
+.my-style {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff3cd;
-    background:$main-color;
+    background: $main-color;
     height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.my-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    background: $main-color;
+    color: #fff3cd;
 }

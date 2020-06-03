@@ -21,8 +21,10 @@ Route::get('/about',function(){
 });
 
 
-Route::get('/article','ArticlesController@index');
+Route::get('/articles','ArticlesController@index');
+Route::post('/articles/','ArticlesController@store');
 Route::get('/articles/create','ArticlesController@create');
 Route::get('/articles/{artilce}','ArticlesController@show');
-
+Route::get('/articles/{article}/edit','ArticlesController@edit');
+Route::put('/articles/{article}','ArticlesController@update');
 
