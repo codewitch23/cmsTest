@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    public function show($id)
+//    route model binding
+    public function show(Article $article)
     {
-        $article = Article::find($id);
         return view('articles.show', ['article' => $article]);
     }
 
@@ -24,34 +24,43 @@ class ArticlesController extends Controller
 
     public function create()
     {
+
         return view('articles.create');
     }
 
     public function store()
     {
-        $article = new Article();
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-        return redirect('/articles');
+        Article::create($this->validateArticle());
+
+//        $article=new Article();
+//        $article->title=request('title');
+//        $article->excerpt=request('excerpt');
+//        $article->body=request('body');
+//        $article->save();
+        return redirect(route('articles.index'));
     }
 
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
         return view('articles.edit', ['article' => $article]);
     }
 
-    public function update($id)
+    public function update(Article $article)
     {
-        $article = Article::find($id);
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-        return redirect('/articles/'.$article->id);
+        $article->update(request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]));
+        return redirect($article->path());
     }
 
-
+    public function validateArticle()
+    {
+        return request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+    }
 }
