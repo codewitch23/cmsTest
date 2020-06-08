@@ -10950,3 +10950,13 @@ a.text-dark:focus {
   color: #fff3cd;
 }
 
+.my-list {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.my-tag {
+  width: 200px;
+}
+

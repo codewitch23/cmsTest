@@ -1,1 +1,2 @@
-require('./bootstrap');
+require("./bootstrap");
+// Material Select Initialization

@@ -40,6 +40,17 @@
                     <p class="text-muted">{{$errors->first('body')}}</p>
                     @enderror
                 </div>
+                <div class="row">
+                    <div class="col-lg-3  ">
+                        <select name="tags[]" id=""  class="form-group d-flex flex-row  w-100" multiple>
+                            @foreach($tags as $tag)
+                                <option class="form-control "
+                                        value="{{$tag->id}}">{{$tag->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
                 <button class="btn btn-outline-success btn-block" type="submit">Submit</button>
             </div>
         </div>
