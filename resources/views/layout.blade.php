@@ -31,7 +31,7 @@
                 <li class="{{Request::path()==='articles'? 'current_page_item':''}}"><a href="/articles" accesskey="4"
                                                                                          title="">Articles</a></li>
                 <li class="{{Request::path()==='contactUs'?'current_page_item':''}}"><a href="#" accesskey="5" title="">Contact
-                        Us</a></li>
+                        Us2</a></li>
             </ul>
         </div>
     </div>
